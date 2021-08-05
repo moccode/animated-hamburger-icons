@@ -1,0 +1,154 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #5d5b6a;
+}
+
+/* // BOUTTON // */
+.box {
+  width: 100px;
+  height: 100px;
+  margin: 20px;
+  background-color: #758184;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+}
+
+/* // CONTAINER-LIGNES // */
+.container-lignes {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 40px;
+  pointer-events: none;
+}
+
+/* // LIGNE // */
+.ligne {
+  position: absolute;
+  width: 60px;
+  height: 10px;
+  background-color: #cfb495;
+  border-radius: 5px;
+  pointer-events: none;
+}
+
+.ligne:nth-child(1) {
+  top: 0;
+}
+
+.ligne:nth-child(2) {
+  top: 15px;
+}
+
+.ligne:nth-child(3) {
+  top: 30px;
+}
+
+/* // ANIMATION BOUTTON B1 // */
+.b1 .ligne:nth-child(1),
+.b1 .ligne:nth-child(3) {
+  transform: rotate(0deg);
+  transition: transform 0.3s ease-in-out, top 0.3s 0.3s ease-in-out;
+}
+
+.b1 .ligne:nth-child(2) {
+  transition: opacity 0.3s 0.3s ease-in-out;
+}
+
+.b1.active .ligne:nth-child(1) {
+  top: 15px;
+  transform: rotate(45deg);
+  transition: top 0.3s ease-in-out, transform 0.3s 0.3s ease-in-out;
+}
+
+.b1.active .ligne:nth-child(2) {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.b1.active .ligne:nth-child(3) {
+  top: 15px;
+  transform: rotate(-45deg);
+  transition: top 0.3s ease-in-out, transform 0.3s 0.3s ease-in-out;
+}
+
+/* // ANIMATION BOUTTON B2 // */
+.b2 .ligne:nth-child(1) {
+  transition: top 0.3s 0.3s ease-in-out;
+}
+
+.b2 .ligne:nth-child(3) {
+  transform: rotate(0deg);
+  transition: transform 0.3s ease-in-out, top 0.3s 0.3s ease-in-out;
+}
+
+.b2 .ligne:nth-child(2) {
+  transition: opacity 0.3s 0.3s ease-in-out;
+}
+
+.b2.active .ligne:nth-child(1) {
+  top: 15px;
+  transition: top 0.3s ease-in-out;
+}
+
+.b2.active .ligne:nth-child(2) {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.b2.active .ligne:nth-child(3) {
+  top: 15px;
+  transform: rotate(90deg);
+  transition: top 0.3s ease-in-out, transform 0.3s 0.3s ease-in-out;
+}
+
+/* // ANIMATION BOUTTON B3 // */
+.b3 .container-lignes {
+  transition: transform 0.3s ease-in-out;
+}
+
+.b3.active .container-lignes {
+  transition: transform 0.3s 0.3s ease-in-out;
+  transform: translate(-50%, -50%) rotate(360deg);
+}
+
+.b3 .ligne:nth-child(1),
+.b3 .ligne:nth-child(3) {
+  transform: rotate(0deg);
+  transition: transform 0.3s ease-in-out, top 0.3s 0.3s ease-in-out;
+}
+
+.b3 .ligne:nth-child(2) {
+  transition: opacity 0.3s 0.3s ease-in-out;
+}
+
+.b3.active .ligne:nth-child(1) {
+  top: 15px;
+  transform: rotate(45deg);
+  transition: top 0.3s ease-in-out, transform 0.3s 0.3s ease-in-out;
+}
+
+.b3.active .ligne:nth-child(2) {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.b3.active .ligne:nth-child(3) {
+  top: 15px;
+  transform: rotate(-45deg);
+  transition: top 0.3s ease-in-out, transform 0.3s 0.3s ease-in-out;
+}
